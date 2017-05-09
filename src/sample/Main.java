@@ -2,9 +2,9 @@ package sample;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.File;
 
@@ -16,8 +16,23 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FileManager fileManager = new FileManager();
         GridPane gridPane = new GridPane();
-        Button button = new Button("BOI Folder");
+        Scene scene = new Scene(new VBox(), 400, 350);
+        Button button = new Button("Game Folder");
         TextField textField = new TextField(String.valueOf(path));
+
+        MenuBar menuBar = new MenuBar();
+        Menu menuGame = new Menu("Game");
+        MenuItem add = new MenuItem("Add");
+        MenuItem remove = new MenuItem("Remove");
+        MenuItem select = new MenuItem("Select");
+        add.setOnAction(t -> {});
+        remove.setOnAction(t -> {});
+        select.setOnAction(t -> {});
+
+        menuGame.getItems().addAll(add,remove, select);
+        Menu menuSettings = new Menu("Settings");
+
+        menuBar.getMenus().addAll(menuGame, menuSettings);
 
         textField.setMinWidth(200);
 
@@ -30,8 +45,9 @@ public class Main extends Application {
         gridPane.add(textField,1,1);
         gridPane.add(button,2,1);
 
+        ((VBox) scene.getRoot()).getChildren().addAll(menuBar, gridPane);
         primaryStage.setTitle("Mod Manager");
-        primaryStage.setScene(new Scene(gridPane, 300, 275));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
