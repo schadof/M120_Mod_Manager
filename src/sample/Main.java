@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.File;
 
@@ -46,6 +47,7 @@ public class Main extends Application {
         gridPane.add(button,2,1);
 
         ((VBox) scene.getRoot()).getChildren().addAll(menuBar, gridPane);
+        scene.getRoot().setStyle("-fx-background-color: BLACK;");
         primaryStage.setTitle("Mod Manager");
         primaryStage.setScene(scene);
         primaryStage.show();
