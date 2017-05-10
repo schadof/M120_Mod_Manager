@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Application;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -7,6 +8,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -19,46 +21,66 @@ public class ModScreen {
     private FlowPane flow;
     private GridPane grid;
     private Pane pane;
-    static private String folderPath;
-
+    private String mainFolder;
+    private String gameName;
     private ScrollPane scroll;
-    static private CheckBox[] checkBox;
+    private CheckBox[] checkBox;
 
-    public ModScreen(String game, int lenght, int hight, String modFolder){
-
-        this.folderPath = new String(modFolder+"/" +game);
+    public ModScreen(int windowLenght, int windowHight, String gameName){
+        this.gameName = gameName;
+        this.mainFolder = new String("C:/Users/"+ new com.sun.security.auth.module.NTSystem().getName()+"/Documents/mods");
         this.scroll = new ScrollPane();
-        this.flow = new FlowPane(Orientation.HORIZONTAL, (lenght *0.8 ), hight);
+        this.flow = new FlowPane(Orientation.HORIZONTAL, (windowLenght *0.8 ), windowHight);
         this.grid = new GridPane();
         this.pane = new Pane();
 
 
     }
-     public static void  createLayout(){
+     public void  createLayout(){
 
-        File folder = new File(folderPath);
-        File[] fileList = folder.listFiles();
-        ArrayList<String> fileNames = new ArrayList<String>();
+        File modFolder;
+        File gameMoFolder ;
+        File[] fileList;
+        ArrayList<String> fileNames;
 
-        for (File file : fileList) {
-            if (file.isFile()) {
-                fileNames.add(file.getName());
-                System.out.println(file.getName());
+         modFolder = new File(mainFolder);
+
+         if (modFolder.mkdir()) {
+
+             System.out.println("Main Mod Folder has been created");
+         }
+
+         gameMoFolder = new File(mainFolder+"/"+gameName);
+
+         if(gameMoFolder.mkdir()){
+             System.out.println("Game Folder has been created");
+         }
+
+        if(gameMoFolder.list().length > 0) {
+
+            fileList = gameMoFolder.listFiles();
+            fileNames = new ArrayList<String>();
+
+            for (File file : fileList) {
+                if (file.isFile()) {
+                    fileNames.add(file.getName());
+                    System.out.println(file.getName());
+                }
             }
-        }
-        checkBox = new CheckBox[fileNames.size()];
-        for(int i = 0; i < fileNames.size(); i++){
 
-            checkBox[i] = new CheckBox();
-            checkBox[i].setText(fileNames.get(i));
-            System.out.print(fileNames.get(i));
+            checkBox = new CheckBox[fileNames.size()];
+
+            for (int i = 0; i < fileNames.size(); i++) {
+                checkBox[i] = new CheckBox(fileNames.get(i));
+                grid.add(checkBox[i], 1,i);
+
+            }
 
         }
+        flow.getChildren().addAll(grid,pane);
+         scroll.setContent(flow);
 
 
     }
-    public static void main(String[] args) {
-        folderPath = new String("C:/Users/11mmuellerde/Documents/DevC++");
-        createLayout();
-    }
+
 }

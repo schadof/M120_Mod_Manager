@@ -12,6 +12,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        ModScreen modScreen = new ModScreen(10, 10, "skyrim");
+        modScreen.createLayout();
+
         GridPane gridPane = new GridPane();
         Settings settings = new Settings();
         Add add = new Add();
@@ -50,6 +54,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+
+
+
         launch(args);
     }
 }
