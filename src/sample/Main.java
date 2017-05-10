@@ -1,10 +1,10 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Priority;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -12,13 +12,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        BorderPane borderPane = new BorderPane();
+        GridPane gridPane = new GridPane();
         Settings settings = new Settings();
         Add add = new Add();
-        int applicationHeight = 350;
-        int applicationWidth = 400;
-        Scene scene = new Scene(new VBox(), applicationWidth, applicationHeight);
-        SideButtonPane sideButtonPane = new SideButtonPane(applicationHeight);
+        Scene scene = new Scene(new VBox(), 400, 350);
 
         MenuBar menuBar = new MenuBar();
         Menu menuGame = new Menu("Game");
@@ -41,11 +38,11 @@ public class Main extends Application {
 
         menuBar.getMenus().addAll(menuGame, menuSettings);
 
-        borderPane.setLeft(sideButtonPane);
-        //borderPane.setCenter(@TODO add michis modlist here);
-        //borderPane.setRight(@TODO add michis moddescription here);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(0, 10, 10, 0));
 
-        ((VBox) scene.getRoot()).getChildren().addAll(menuBar, borderPane);
+        ((VBox) scene.getRoot()).getChildren().addAll(menuBar, gridPane);
         scene.getRoot().setStyle("-fx-background-color: BLACK;");
         primaryStage.setTitle("Mod Manager");
         primaryStage.setScene(scene);
