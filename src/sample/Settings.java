@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 
 public class Settings {
     public void settings(){
+        StringBuilder string = new StringBuilder();
         Stage stage = new Stage();
         Scene scene = new Scene(new VBox());
         GridPane gridPane = new GridPane();
@@ -25,10 +27,9 @@ public class Settings {
         );
         Button button = new Button("Set");
 
-        button.setOnAction(actionEvent -> {
-
+        button.setOnAction((ActionEvent actionEvent) -> {
+            string.append(String.valueOf(comboBox.getValue()));
             stage.close();
-
         });
 
         comboBox.setPrefWidth(175);
