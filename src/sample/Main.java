@@ -1,50 +1,46 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import java.io.File;
 
 public class Main extends Application {
 
-    public static File path = new java.io.File("~/.steam/steam/steamapps/common/The Binding of Isaac Rebirth");
-
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FileManager fileManager = new FileManager();
         GridPane gridPane = new GridPane();
+        Settings settings = new Settings();
+        Add add = new Add();
         Scene scene = new Scene(new VBox(), 400, 350);
-        Button button = new Button("Game Folder");
-        TextField textField = new TextField(String.valueOf(path));
 
         MenuBar menuBar = new MenuBar();
         Menu menuGame = new Menu("Game");
-        MenuItem add = new MenuItem("Add");
-        MenuItem remove = new MenuItem("Remove");
-        MenuItem select = new MenuItem("Select");
-        add.setOnAction(t -> {});
-        remove.setOnAction(t -> {});
-        select.setOnAction(t -> {});
+        MenuItem add1 = new MenuItem("Add");
+        MenuItem remove1 = new MenuItem("Remove");
+        MenuItem select1 = new MenuItem("Select");
+        add1.setOnAction(t -> {
+            add.add();
+        });
+        remove1.setOnAction(t -> {});
+        select1.setOnAction(t -> {});
+        menuGame.getItems().addAll(add1,remove1, select1);
 
-        menuGame.getItems().addAll(add,remove, select);
         Menu menuSettings = new Menu("Settings");
+        MenuItem settings1 = new MenuItem("Settings");
+        settings1.setOnAction(t -> {
+            settings.settings();
+        });
+        menuSettings.getItems().addAll(settings1);
 
         menuBar.getMenus().addAll(menuGame, menuSettings);
 
-        textField.setMinWidth(200);
-
-        button.setOnAction(actionEvent -> {
-            path = fileManager.filechooser();
-            textField.setText(String.valueOf(path));
-        });
-
-
-        gridPane.add(textField,1,1);
-        gridPane.add(button,2,1);
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setPadding(new Insets(0, 10, 10, 0));
 
         ((VBox) scene.getRoot()).getChildren().addAll(menuBar, gridPane);
         scene.getRoot().setStyle("-fx-background-color: BLACK;");
