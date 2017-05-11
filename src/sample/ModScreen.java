@@ -55,7 +55,7 @@ public class ModScreen {
 
         if(gameMoFolder.list().length > 0) {
             fileList = gameMoFolder.listFiles();
-            fileNames = new ArrayList<String>();
+            fileNames = new ArrayList<>();
 
             for (File file : fileList) {
                 if (file.isFile()) {
@@ -78,6 +78,7 @@ public class ModScreen {
 
         details = new Text("Leer");
         flow.getChildren().add(details);
+        flow.setVgap(10);
         flow.setStyle("-fx-background-color: #ccc;");
         scroll.setContent(grid);
 

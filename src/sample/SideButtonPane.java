@@ -1,7 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -9,9 +7,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-/**
- * Created by Gian on 5/10/2017.
- */
 public class SideButtonPane extends VBox{
 
     Image enableImg = new Image(getClass().getResourceAsStream("images/enable.png"));
@@ -41,35 +36,15 @@ public class SideButtonPane extends VBox{
         delete.setGraphic(new ImageView(deleteImg));
         options.setGraphic(new ImageView(optionsImg));
 
-        enable.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                System.out.println("This would enable the selected mod.");
-            }
-        });
+        enable.setOnAction(e -> System.out.println("This would enable the selected mod."));
 
-        disable.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                System.out.println("This would disable the the selected mod.");
-            }
-        });
+        disable.setOnAction(e -> System.out.println("This would disable the the selected mod."));
 
-        add.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                System.out.println("This would add and install the selected mod.");
-            }
-        });
+        add.setOnAction(e -> System.out.println("This would add and install the selected mod."));
 
-        delete.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                System.out.println("This would delete and uninstall the selected mod.");
-            }
-        });
+        delete.setOnAction(e -> System.out.println("This would delete and uninstall the selected mod."));
 
-        options.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                System.out.println("This serves as a placeholder for options about the selected mod.");
-            }
-        });
+        options.setOnAction(e -> System.out.println("This serves as a placeholder for options about the selected mod."));
 
         this.setVgrow(enable, Priority.ALWAYS);
         this.setVgrow(disable, Priority.ALWAYS);
@@ -79,7 +54,6 @@ public class SideButtonPane extends VBox{
 
         this.setSpacing(10);
         this.setPadding(new Insets(10, 10, 10, 10));
-        this.setMinHeight(applicationHeight);
         this.setStyle("-fx-background-color: #FFFFFF;");
 
         this.getChildren().addAll(enable, disable, add, delete, options);

@@ -14,8 +14,8 @@ public class Main extends Application {
         BorderPane borderPane = new BorderPane();
         Settings settings = new Settings();
         Add add = new Add();
-        int appHeight = 350;
-        int appWidth = 400;
+        int appHeight = 300;
+        int appWidth = 500;
         Scene scene = new Scene(new VBox(), appWidth, appHeight);
         SideButtonPane sideButtonPane = new SideButtonPane(appHeight);
 
