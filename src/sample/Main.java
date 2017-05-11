@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
@@ -24,18 +25,14 @@ public class Main extends Application {
         MenuItem add1 = new MenuItem("Add");
         MenuItem remove1 = new MenuItem("Remove");
         MenuItem select1 = new MenuItem("Select");
-        add1.setOnAction(t -> {
-            add.add();
-        });
+        add1.setOnAction(t -> add.add());
         remove1.setOnAction(t -> {});
         select1.setOnAction(t -> {});
         menuGame.getItems().addAll(add1,remove1, select1);
 
         Menu menuSettings = new Menu("Settings");
         MenuItem settings1 = new MenuItem("Settings");
-        settings1.setOnAction(t -> {
-            settings.settings();
-        });
+        settings1.setOnAction(t -> settings.settings());
         menuSettings.getItems().addAll(settings1);
 
         menuBar.getMenus().addAll(menuGame, menuSettings);
