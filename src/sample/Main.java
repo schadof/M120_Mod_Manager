@@ -43,9 +43,12 @@ public class Main extends Application {
         menuBar.getMenus().addAll(menuGame, menuSettings);
 
         borderPane.setLeft(sideButtonPane);
-        //borderPane.setCenter();   @TODO Michi add your stuff
-        //borderPane.setRight();    @TODO Michi add your stuff
 
+        ModScreen modScreen = new ModScreen(appWidth,appHeight,"skyrim");
+        modScreen.createLayout();
+
+        borderPane.setCenter(modScreen.getScroll());
+        borderPane.setRight(modScreen.getFlow());
 
         ((VBox) scene.getRoot()).getChildren().addAll(menuBar, borderPane);
         scene.getRoot().setStyle("-fx-background-color: BLACK;");
