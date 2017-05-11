@@ -14,11 +14,13 @@ public class SideButtonPane extends VBox{
 
     Image enableImg = new Image(getClass().getResourceAsStream("images/enable.png"));
     Image disableImg = new Image(getClass().getResourceAsStream("images/disable.png"));
+    Image addImg = new Image(getClass().getResourceAsStream("images/add.png"));
     Image deleteImg = new Image(getClass().getResourceAsStream("images/delete.png"));
     Image optionsImg = new Image(getClass().getResourceAsStream("images/options.png"));
 
     Button enable = new Button();
     Button disable = new Button();
+    Button add = new Button();
     Button delete = new Button();
     Button options = new Button();
 
@@ -27,16 +29,19 @@ public class SideButtonPane extends VBox{
     public SideButtonPane(int applicationHeight){
         enable.setMaxWidth(Double.MAX_VALUE);
         disable.setMaxWidth(Double.MAX_VALUE);
+        add.setMaxWidth(Double.MAX_VALUE);
         delete.setMaxWidth(Double.MAX_VALUE);
         options.setMaxWidth(Double.MAX_VALUE);
 
         enable.setGraphic(new ImageView(enableImg));
         disable.setGraphic(new ImageView(disableImg));
+        add.setGraphic(new ImageView(addImg));
         delete.setGraphic(new ImageView(deleteImg));
         options.setGraphic(new ImageView(optionsImg));
 
         this.setVgrow(enable, Priority.ALWAYS);
         this.setVgrow(disable, Priority.ALWAYS);
+        this.setVgrow(add, Priority.ALWAYS);
         this.setVgrow(delete, Priority.ALWAYS);
         this.setVgrow(options, Priority.ALWAYS);
 
@@ -45,6 +50,6 @@ public class SideButtonPane extends VBox{
         this.setMinHeight(applicationHeight);
         this.setStyle("-fx-background-color: #FFFFFF;");
 
-        this.getChildren().addAll(enable, disable, delete, options);
+        this.getChildren().addAll(enable, disable, add, delete, options);
     }
 }
