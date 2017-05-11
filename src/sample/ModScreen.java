@@ -1,22 +1,14 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.*;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-
-import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -77,7 +69,6 @@ public class ModScreen {
             }
 
             checkBox = new CheckBox[fileNames.size()];
-            details = new Text("Leer");
 
             for (int i = 0; i < fileNames.size(); i++) {
 
@@ -89,7 +80,7 @@ public class ModScreen {
 
         }
 
-
+        details = new Text("Leer");
         flow.getChildren().add(details);
         flow.setStyle("-fx-background-color: #ccc;");
         scroll.setContent(grid);
@@ -112,7 +103,7 @@ public class ModScreen {
 
                     if(checkBox[i].isSelected()){
 
-                        details = new Text (checkBox[i].getText().toString());
+                        details = new Text (checkBox[i].getText().toString()+" ");
 
                     }
                     else{
