@@ -32,8 +32,8 @@ public class ModScreen {
         scroll.setMinWidth( windowLenght *0.5);
         scroll.setMaxWidth( windowLenght *0.5);
         this.flow = new FlowPane();
-        flow.setMinWidth( windowLenght *0.33);
-        flow.setMaxWidth( windowLenght *0.33);
+        flow.setMinWidth( windowLenght *0.36);
+        flow.setMaxWidth( windowLenght *0.36);
         this.grid = new GridPane();
 
     }
@@ -69,7 +69,6 @@ public class ModScreen {
             }
 
             checkBox = new CheckBox[fileNames.size()];
-            details = new Text("Leer");
 
             for (int i = 0; i < fileNames.size(); i++) {
 
@@ -81,7 +80,7 @@ public class ModScreen {
 
         }
 
-
+        details = new Text("Leer");
         flow.getChildren().add(details);
         flow.setStyle("-fx-background-color: #ccc;");
         scroll.setContent(grid);
@@ -104,7 +103,7 @@ public class ModScreen {
 
                     if(checkBox[i].isSelected()){
 
-                        details = new Text (checkBox[i].getText().toString());
+                        details = new Text (checkBox[i].getText().toString()+" ");
 
                     }
                     else{
