@@ -23,7 +23,7 @@ public class SideButtonPane extends VBox{
 
 
 
-    public SideButtonPane(int applicationHeight){
+    public SideButtonPane(){
         enable.setMaxWidth(Double.MAX_VALUE);
         disable.setMaxWidth(Double.MAX_VALUE);
         add.setMaxWidth(Double.MAX_VALUE);
@@ -46,16 +46,16 @@ public class SideButtonPane extends VBox{
 
         options.setOnAction(e -> System.out.println("This serves as a placeholder for options about the selected mod."));
 
-        this.setVgrow(enable, Priority.ALWAYS);
-        this.setVgrow(disable, Priority.ALWAYS);
-        this.setVgrow(add, Priority.ALWAYS);
-        this.setVgrow(delete, Priority.ALWAYS);
-        this.setVgrow(options, Priority.ALWAYS);
+        setVgrow(enable, Priority.ALWAYS);
+        setVgrow(disable, Priority.ALWAYS);
+        setVgrow(add, Priority.ALWAYS);
+        setVgrow(delete, Priority.ALWAYS);
+        setVgrow(options, Priority.ALWAYS);
 
-        this.setSpacing(10);
-        this.setPadding(new Insets(10, 10, 10, 10));
-        this.setStyle("-fx-background-color: #FFFFFF;");
+        setSpacing(10);
+        setPadding(new Insets(10));
+        setStyle("-fx-background-color: #FFFFFF;");
 
-        this.getChildren().addAll(enable, disable, add, delete, options);
+        getChildren().addAll(enable, disable, add, delete, options);
     }
 }

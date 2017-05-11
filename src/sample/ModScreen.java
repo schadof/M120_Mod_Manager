@@ -21,15 +21,15 @@ public class ModScreen {
     private CheckBox[] checkBox;
     private Text details;
 
-    public ModScreen(int windowLenght, int windowHight, String gameName){
+    public ModScreen(int windowLength, int windowHeight, String gameName){
         this.gameName = gameName;
         this.mainFolder = System.getProperty("user.home")+"/Documents/mods";
         this.scroll = new ScrollPane();
-        scroll.setMinWidth( windowLenght *0.5);
-        scroll.setMaxWidth( windowLenght *0.5);
+        scroll.setMinWidth( windowLength *0.5);
+        scroll.setMaxWidth( windowLength *0.5);
         this.flow = new FlowPane();
-        flow.setMinWidth( windowLenght *0.36);
-        flow.setMaxWidth( windowLenght *0.36);
+        flow.setMinWidth( windowLength *0.36);
+        flow.setMaxWidth( windowLength *0.36);
         this.grid = new GridPane();
 
     }

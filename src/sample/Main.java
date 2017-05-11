@@ -17,7 +17,7 @@ public class Main extends Application {
         int appHeight = 300;
         int appWidth = 500;
         Scene scene = new Scene(new VBox(), appWidth, appHeight);
-        SideButtonPane sideButtonPane = new SideButtonPane(appHeight);
+        SideButtonPane sideButtonPane = new SideButtonPane();
 
         MenuBar menuBar = new MenuBar();
         Menu menuGame = new Menu("Game");
