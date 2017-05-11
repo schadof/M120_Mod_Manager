@@ -1,8 +1,6 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
@@ -54,6 +52,7 @@ public class Main extends Application {
         scene.getRoot().setStyle("-fx-background-color: BLACK;");
         primaryStage.setTitle("Mod Manager");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

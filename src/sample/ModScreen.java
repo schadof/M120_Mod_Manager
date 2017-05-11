@@ -1,8 +1,11 @@
 package sample;
 
-
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
@@ -12,9 +15,6 @@ import javafx.scene.text.Text;
 import java.io.File;
 import java.util.ArrayList;
 
-/**
- * Created by 11mmuellerde on 10.05.2017.
- */
 public class ModScreen {
 
     private FlowPane flow;
@@ -27,7 +27,7 @@ public class ModScreen {
 
     public ModScreen(int windowLenght, int windowHight, String gameName){
         this.gameName = gameName;
-        this.mainFolder = new String("C:/Users/"+ new com.sun.security.auth.module.NTSystem().getName()+"/Documents/mods");
+        this.mainFolder = new String(System.getProperty("user.home")+"/Documents/mods");
         this.scroll = new ScrollPane();
         scroll.setMinWidth( windowLenght *0.5);
         scroll.setMaxWidth( windowLenght *0.5);
@@ -69,6 +69,7 @@ public class ModScreen {
             }
 
             checkBox = new CheckBox[fileNames.size()];
+            details = new Text("Leer");
 
             for (int i = 0; i < fileNames.size(); i++) {
 
@@ -80,7 +81,7 @@ public class ModScreen {
 
         }
 
-        details = new Text("Leer");
+
         flow.getChildren().add(details);
         flow.setStyle("-fx-background-color: #ccc;");
         scroll.setContent(grid);
@@ -103,7 +104,7 @@ public class ModScreen {
 
                     if(checkBox[i].isSelected()){
 
-                        details = new Text (checkBox[i].getText().toString()+" ");
+                        details = new Text (checkBox[i].getText().toString());
 
                     }
                     else{
