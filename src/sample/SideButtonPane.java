@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -38,6 +40,36 @@ public class SideButtonPane extends VBox{
         add.setGraphic(new ImageView(addImg));
         delete.setGraphic(new ImageView(deleteImg));
         options.setGraphic(new ImageView(optionsImg));
+
+        enable.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("This would enable the selected mod.");
+            }
+        });
+
+        disable.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("This would disable the the selected mod.");
+            }
+        });
+
+        add.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("This would add and install the selected mod.");
+            }
+        });
+
+        delete.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("This would delete and uninstall the selected mod.");
+            }
+        });
+
+        options.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println("This serves as a placeholder for options about the selected mod.");
+            }
+        });
 
         this.setVgrow(enable, Priority.ALWAYS);
         this.setVgrow(disable, Priority.ALWAYS);
