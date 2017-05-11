@@ -8,9 +8,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M216_Mod_Manager/sample/Settings.class" afterPath="$PROJECT_DIR$/out/production/M216_Mod_Manager/sample/Settings.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/M216_Mod_Manager/sample/SideButtonPane.class" afterPath="$PROJECT_DIR$/out/production/M216_Mod_Manager/sample/SideButtonPane.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/ModScreen.java" afterPath="$PROJECT_DIR$/src/sample/ModScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SideButtonPane.java" afterPath="$PROJECT_DIR$/src/sample/SideButtonPane.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +69,7 @@
       <file leaf-file-name="SideButtonPane.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/SideButtonPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="210">
               <caret line="44" column="105" lean-forward="true" selection-start-line="44" selection-start-column="105" selection-end-line="44" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -687,7 +684,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494530883997</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="more tweaks">
+      <created>1494531571705</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1494531571705</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -746,7 +750,8 @@
     <MESSAGE value="Home directory universalized" />
     <MESSAGE value="Home directory universalized and tweaks" />
     <MESSAGE value="tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="tweaks" />
+    <MESSAGE value="more tweaks" />
+    <option name="LAST_COMMIT_MESSAGE" value="more tweaks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1064,7 +1069,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SideButtonPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="210">
           <caret line="44" column="105" lean-forward="true" selection-start-line="44" selection-start-column="105" selection-end-line="44" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
