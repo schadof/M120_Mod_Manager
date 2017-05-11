@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class Add {
-    public static File path = new java.io.File("~/.steam/steam/steamapps/common/The Binding of Isaac Rebirth");
+    private static File path = new java.io.File(System.getProperty("user.home"));
     public void add(){
         Stage stage = new Stage();
         Scene scene = new Scene(new VBox());

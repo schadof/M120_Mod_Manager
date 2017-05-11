@@ -28,7 +28,7 @@ public class Settings {
         Button button = new Button("Set");
 
         button.setOnAction((ActionEvent actionEvent) -> {
-            string.append(String.valueOf(comboBox.getValue()));
+            System.out.println("Backgroundcolor set to: "+comboBox.getValue());
             stage.close();
         });
 

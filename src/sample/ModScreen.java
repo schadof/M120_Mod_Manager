@@ -1,11 +1,7 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
@@ -27,7 +23,7 @@ public class ModScreen {
 
     public ModScreen(int windowLenght, int windowHight, String gameName){
         this.gameName = gameName;
-        this.mainFolder = new String(System.getProperty("user.home")+"/Documents/mods");
+        this.mainFolder = System.getProperty("user.home")+"/Documents/mods";
         this.scroll = new ScrollPane();
         scroll.setMinWidth( windowLenght *0.5);
         scroll.setMaxWidth( windowLenght *0.5);
