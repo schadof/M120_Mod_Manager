@@ -38,7 +38,7 @@ public class ModScreen {
         ArrayList<String> fileNames;
 
          modFolder = new File(mainFolder);
-
+         //Creates the main mod folder if it does not exist
          if (modFolder.mkdir()) {
 
              System.out.println("Main Mod Folder has been created url: "+ mainFolder);
@@ -49,11 +49,11 @@ public class ModScreen {
          if(gameMoFolder.mkdir()){
              System.out.println("Game Folder has been created url; "+mainFolder+"/"+gameName);
          }
-
+         //Creates the Game folder in mod folder if it does not exist
         if(gameMoFolder.list().length > 0) {
             fileList = gameMoFolder.listFiles();
             fileNames = new ArrayList<>();
-
+            //gets the names of the files
             for (File file : fileList) {
                 if (file.isFile()) {
                     fileNames.add(file.getName());
@@ -62,7 +62,7 @@ public class ModScreen {
             }
 
             checkBox = new CheckBox[fileNames.size()];
-
+            //saves the name of the files in the checkboxes
             for (int i = 0; i < fileNames.size(); i++) {
 
                 checkBox[i] = new CheckBox(fileNames.get(i));
@@ -90,6 +90,7 @@ public class ModScreen {
             int i = 0;
 
             while(run){
+                //puts the name of the checkbox in details and removes it
                 if(checkBox[i].getSkin().equals(((Control) evt.getSource()).getSkin())){
 
                     System.out.println(((Control) evt.getSource()).getSkin());
