@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -19,17 +20,15 @@ public class ModScreen {
     private String gameName;
     private ScrollPane scroll;
     private CheckBox[] checkBox;
-    private Text details;
+    private TextArea details;
 
     public ModScreen(int windowLength, int windowHeight, String gameName){
         this.gameName = gameName;
         this.mainFolder = System.getProperty("user.home")+"/Documents/mods";
         this.scroll = new ScrollPane();
-        scroll.setMinWidth( windowLength *0.5);
-        scroll.setMaxWidth( windowLength *0.5);
         this.flow = new FlowPane();
-        flow.setMinWidth( windowLength *0.36);
-        flow.setMaxWidth( windowLength *0.36);
+        flow.setMaxWidth(200);
+        flow.setMinWidth(200);
         this.grid = new GridPane();
 
     }
@@ -76,7 +75,10 @@ public class ModScreen {
 
         }
 
-        details = new Text("Leer");
+        details = new TextArea("Here is the Description of the last choosen mod");
+         details.setMaxWidth(200);
+         details.setMinHeight(260);
+         details.setMaxHeight(260);
         flow.getChildren().add(details);
         flow.setStyle("-fx-background-color: #ccc;");
         scroll.setContent(grid);
@@ -95,18 +97,16 @@ public class ModScreen {
                     System.out.println(((Control) evt.getSource()).getSkin());
                     System.out.println(checkBox[i].getSkin());
 
-                    flow.getChildren().remove(details);
 
                     if(checkBox[i].isSelected()){
 
-                        details = new Text (checkBox[i].getText().toString()+" ");
+                        details.setText(checkBox[i].getText().toString()+" ");
 
                     }
                     else{
-                        details = new Text("Leer");
+                        details.setText("Here is the Description of the last choosen mod");
                     }
 
-                    flow.getChildren().add(details);
                     run = false;
                 }
                 i++;
