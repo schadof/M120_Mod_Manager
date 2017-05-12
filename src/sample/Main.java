@@ -45,7 +45,7 @@ public class Main extends Application {
         borderPane.setRight(modScreen.getFlow());
 
         ((VBox) scene.getRoot()).getChildren().addAll(menuBar, borderPane);
-        scene.getRoot().setStyle("-fx-background-color: BLACK;");
+        scene.getRoot().setStyle("-fx-background-color: #FFFFFF;");
         primaryStage.setTitle("Mod Manager");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
