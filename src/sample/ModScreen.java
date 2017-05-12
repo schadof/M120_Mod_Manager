@@ -78,7 +78,6 @@ public class ModScreen {
 
         details = new Text("Leer");
         flow.getChildren().add(details);
-        flow.setVgap(10);
         flow.setStyle("-fx-background-color: #ccc;");
         scroll.setContent(grid);
 
