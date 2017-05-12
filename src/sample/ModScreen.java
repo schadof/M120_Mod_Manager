@@ -5,10 +5,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Text;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -77,8 +75,8 @@ public class ModScreen {
 
         details = new TextArea("Here is the Description of the last choosen mod");
          details.setMaxWidth(200);
-         details.setMinHeight(260);
-         details.setMaxHeight(260);
+         details.setMinHeight(270);
+         details.setMaxHeight(270);
         flow.getChildren().add(details);
         flow.setStyle("-fx-background-color: #ccc;");
         scroll.setContent(grid);
